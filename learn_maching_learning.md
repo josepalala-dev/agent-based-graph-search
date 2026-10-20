@@ -158,19 +158,63 @@ def bfs(environment, start):
 
 # Key Concepts
 
-| Concept | Purpose |
+
+| Term | Definition and Purpose |
 | --- | --- |
-| Node / State | A discrete location or continuous representation in the state space |
-| Edge | Connection or valid transition between states |
-| Adjacency List | Structural definition of connected graph nodes |
-| Agent | Autonomous entity making actions based on perception |
-| Environment | Defines transitions, validation, and goal criteria |
-| Tokenization / Encoding | Mapping categorical inputs or symbols to numeric IDs |
-| Embeddings | Dense vector representations capturing semantic/spatial relationships |
-| Hugging Face `transformers` | Library for converting unstructured state observations into latent embeddings |
-| Stack (LIFO) | Data structure powering Depth-First Search (DFS) |
-| Queue (FIFO) | Data structure powering Breadth-First Search (BFS) |
-| `visited` Set | Prevents infinite loops caused by cycles in graph structures |
+| [Node / State](#node--state) | A discrete location or continuous representation in the state space |
+| [Edge](#edge) | Connection or valid transition between states |
+| [Adjacency List](#adjacency-list) | Structural definition of connected graph nodes |
+| [Agent](#agent) | Autonomous entity making actions based on perception |
+| [Environment](#environment) | Defines transitions, validation, and goal criteria |
+| [Tokenization / Encoding](#tokenization-encoding) | Mapping categorical inputs or symbols to numeric IDs |
+| [Embeddings](#embeddings) | Dense vector representations capturing semantic/spatial relationships |
+| [Hugging Face `transformers`](#hugging-face-transformers) | Library for converting unstructured state observations into latent embeddings |
+| [Stack (LIFO)](#stack-lifo) | Data structure powering Depth-First Search (DFS) |
+| [Queue (FIFO)](#queue-fifo) | Data structure powering Breadth-First Search (BFS) |
+| [`visited` Set](#visited-set) | Prevents infinite loops caused by cycles in graph structures |
+
+
+---
+
+Here is an expanded breakdown of each term, including core technical details and a simplified "Explain Like I'm 5" (ELI5) analogy.
+
+---
+### Definition of terms
+
+#### Adjacency List
+
+* **Technical Details:** A graph representation method where each node (or vertex) stores a list of its direct neighbors. It is memory-efficient for sparse graphs, requiring $O(V + E)$ space (where $V$ is vertices and $E$ is edges), making operations like finding neighbors fast ($O(\text{degree}(v))$).
+* **Explain Like I'm 5:** Imagine a notebook where every kid in class has their own page, and on that page, they write down only the names of their best friends.
+
+#### Agent
+
+* **Technical Details:** An autonomous software or hardware system in artificial intelligence or reinforcement learning that senses its environment through sensors/observations, processes state inputs, and chooses actions to maximize a cumulative reward or reach a target state.
+* **Explain Like I'm 5:** Think of a robot playing a video game. It looks at the screen, decides whether to jump or run, and presses the buttons all by itself to win the game.
+
+#### Environment
+
+* **Technical Details:** The surrounding system or world model with which an agent interacts. It enforces state transition dynamics $P(s' \vert{} s, a)$, returns feedback/rewards $R(s, a)$, validates permissible actions, and determines terminal or goal states.
+* **Explain Like I'm 5:** This is the playground and its rules. It tells the player where they can go, what happens when they fall, and when they win or lose.
+
+#### Tokenization Encoding
+
+* **Technical Details:** The preprocessing stage that breaks down raw data (text, categories, or continuous symbols) into discrete tokens and maps them to numerical indices or one-hot vectors, making them readable by neural networks and numerical algorithms.
+* **Explain Like I'm 5:** Computers don't understand words or pictures; they only know numbers. Tokenization is like giving every toy in a toy box a secret number tag so the computer knows which toy you are talking about.
+
+#### Embeddings
+
+* **Technical Details:** High-dimensional, dense continuous vector spaces (e.g., 768-dimensional float arrays) where similar concepts are mapped close to each other. They capture latent semantic, positional, or functional relationships through learned spatial geometry.
+* **Explain Like I'm 5:** Imagine a giant map of floating islands. Words with similar meanings, like "king" and "queen" or "cat" and "dog," land on islands right next to each other so the computer knows they are related.
+
+#### Hugging Face Transformers
+
+* **Technical Details:** An open-source machine learning library providing pre-trained deep learning architectures (BERT, GPT, ViT) and pipelines designed to process unstructured observations (text, vision, audio) into contextualized embeddings or task predictions.
+* **Explain Like I'm 5:** A massive toolbox full of pre-made super-smart brain models that you can plug in to instantly read books, translate languages, or describe pictures.
+
+#### Stack (LIFO)
+
+* **Technical Details:** A linear data structure following the **Last-In, First-Out (LIFO)** access rule. Pushing and popping elements take $O(1)$ constant time. In Depth-First Search (DFS), a stack maintains current branch state tracking to explore as deep as possible before backtracking.
+* **Explain Like I'm 5:** Think of a stack of pancakes. You place new pancakes on top, and when you get hungry, you eat the top pancake first—the last one cooked is the first one eaten.
 
 ---
 
